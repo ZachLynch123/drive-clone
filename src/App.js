@@ -1,5 +1,6 @@
 import './App.css';
 import Header from "./components/Header/Header/Header";
+import Sidebar from './components/Header/Sidebar/Sidebar';
 
 function App() {
   // auth
@@ -8,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Sidebar />
       {/* if user auth
         sideBar
         fileView
