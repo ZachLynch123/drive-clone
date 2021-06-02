@@ -9,6 +9,8 @@ const Sidebar = () => {
 
             <div className="sidebar_container">
                 {/* Side Bar Icons*/}
+                <hr /> 
+                {/* Sidebar Elements */}
             </div>
         </div>
     )
