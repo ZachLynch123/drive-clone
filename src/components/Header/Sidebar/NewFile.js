@@ -42,6 +42,26 @@ const NewFile = () => {
                 <AddIcon />
                 <p>New File</p>
             </div>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description"
+            >
+                <div style={modalStyle} className={classes.paper}>
+                    <p>Select files you want to upload!</p>
+                    {
+                        uploading ? (
+                            <p>Uploading...</p>
+                        ) : (
+                                <>
+                                    <input type="file" onChange={handleChange} />
+                                    <button onClick={handleUpload}>Upload</button>
+                                </>
+                            )
+                    }
+                </div>
+            </Modal>
             
         </div>
     )
