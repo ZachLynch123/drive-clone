@@ -36,9 +36,25 @@ const NewFile = () => {
     const [open, setOpen] = useState(null);
     const [uploading, setUploading] = useState(false);
 
+    // opens modal on click
+    const handleOpen = () => {
+        setOpen(true);
+    }
+
+    // closes modal when clicked off
+    const handleClose = () => {
+        setOpen(false);
+    }
+
+    const handleChange = e => {
+        if (e.target.files[0]) {
+            setFile(e.target.files[0])
+        }
+    }
+
     return (
         <div className="newFile">
-            <div className="newFile_container">
+            <div className="newFile_container" onClick={handleOpen}>
                 <AddIcon />
                 <p>New File</p>
             </div>
@@ -47,7 +63,7 @@ const NewFile = () => {
                 onClose={handleClose}
                 aria-labelledby="simple-modal-title"
                 aria-describedby="simple-modal-description"
-            >
+            > 
                 <div style={modalStyle} className={classes.paper}>
                     <p>Select files you want to upload!</p>
                     {
