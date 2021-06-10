@@ -1,6 +1,20 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import { db } from '../../../firebase'
 
 const FilesView = () => {
+    // use hooks
+
+    const [files, setFiles] = useState([])
+
+    useEffect(() => {
+        db.collection('myFiles').onSnapshot(snapshot => {
+            setFiles(snapshot.docs.map(doc => ({
+                id: doc.id,
+                item: doc.data()
+            })))
+        })
+    }, [])
+
     return (
         <div className="fileView">
             <div className="fileView-row">

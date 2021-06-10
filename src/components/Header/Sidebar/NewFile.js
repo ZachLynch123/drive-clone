@@ -52,7 +52,7 @@ const NewFile = () => {
         }
     }
     
-
+    // uploads files to firebase
     const handleUpload = () => {
         setUploading(true)
 
@@ -60,6 +60,9 @@ const NewFile = () => {
         .then(snapshot => {
             console.log(snapshot);
             console.log(file.name);
+
+            // uploads the file to firebase, gives it a name, timestamp, and url for file
+            // puts it in folder called myFiles
             storage.ref('files').child(file.name).getDownloadURL()
             .then(url=>{
                 db.collection('myFiles').add({
