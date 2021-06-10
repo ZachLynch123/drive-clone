@@ -52,6 +52,28 @@ const NewFile = () => {
         }
     }
 
+    const handleUpload = file => {
+        setUploading(true)
+
+        storage.ref(`files/${file.name}`).put(file)
+        .then(snapshot => {
+            console.log(snapshot);
+            storage.ref('files').child(file.name).getDownloadURL()
+            .then(url=>{
+                db.collection('myFiles').add({
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                    caption: file.name, 
+                    fileUrl: url,
+                    size: snapshot._delegate.byteTransferred,
+                });
+
+                setUploading(false);
+                setOpen(false);
+                setFile(null)
+            });
+        })
+    }
+
     return (
         <div className="newFile">
             <div className="newFile_container" onClick={handleOpen}>
