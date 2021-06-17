@@ -46,6 +46,7 @@ const NewFile = () => {
         setOpen(false);
     }
 
+    // selects file to upload
     const handleChange = e => {
         if (e.target.files[0]) {
             setFile(e.target.files[0])
