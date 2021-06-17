@@ -6,6 +6,7 @@ const FilesView = () => {
 
     const [files, setFiles] = useState([])
 
+
     useEffect(() => {
         db.collection('myFiles').onSnapshot(snapshot => {
             setFiles(snapshot.docs.map(doc => ({
@@ -14,7 +15,7 @@ const FilesView = () => {
             })))
         })
     }, [])
-
+ 
     return (
         <div className="fileView">
             <div className="fileView-row">
