@@ -36,7 +36,7 @@ const NewFile = () => {
     const [open, setOpen] = useState(null);
     const [uploading, setUploading] = useState(false);
 
-    // opens modal on click
+    // opens modal on click 
     const handleOpen = () => {
         setOpen(true);
     }
