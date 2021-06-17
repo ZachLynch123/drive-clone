@@ -27,7 +27,7 @@ const FilesView = () => {
                 </div>
                 <div className="fileView-tiles-right">
                     <p>Last modified</p>
-                    <p>File size</p>
+                    <p>File size</p> 
                 </div>
             </div>
             {/* file items */}
