@@ -59,8 +59,6 @@ const NewFile = () => {
 
         storage.ref(`files/${file.name}`).put(file)
         .then(snapshot => {
-            console.log(snapshot);
-            console.log(file.name);
 
             // uploads the file to firebase, gives it a name, timestamp, and url for file
             // puts it in folder called myFiles

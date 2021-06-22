@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import FileItem from './FileItem'
 import { db } from '../../../firebase'
 
 const FilesView = () => {
@@ -30,7 +31,9 @@ const FilesView = () => {
                     <p>File size</p> 
                 </div>
             </div>
-            {/* file items */}
+            {files.map(({id, item}) => {
+                return <FileItem id={id} caption={item.caption} />
+            })}
         </div>
     )
 }

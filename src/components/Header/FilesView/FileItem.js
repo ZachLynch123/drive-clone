@@ -6,7 +6,11 @@ import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 // display proper month when file was uploaded
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
+
+
+// gets file item by id with correct time stamp and month
 const FileItem = ({ id, caption, timestamp, fileUrl, size }) => {
+    console.log(this.props);
     const fileDate = `${timestamp?.toDate().getDate()} ${monthNames[timestamp?.toDate().getMonth() + 1]} ${timestamp?.toDate().getFullYear()}`
 
     const getReadableFileSizeString = (fileSizeInBytes) => {
