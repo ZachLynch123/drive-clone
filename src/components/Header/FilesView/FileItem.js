@@ -10,6 +10,7 @@ const FileItem = ({ id, caption, timestamp, fileUrl, size }) => {
 
     const getReadableFileSizeString = (fileSizeInBytes) => {
         let i = -1;
+        // units to display file size
         const byteUnits = [' kB', ' MB', ' GB', ' TB', 'PB', 'EB', 'ZB', 'YB'];
         do {
             fileSizeInBytes = fileSizeInBytes / 1024;
