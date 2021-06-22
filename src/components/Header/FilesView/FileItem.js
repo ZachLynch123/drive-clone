@@ -3,6 +3,7 @@ import '../../styles/FileItem.css'
 
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 
+// display proper month when file was uploaded
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 const FileItem = ({ id, caption, timestamp, fileUrl, size }) => {
