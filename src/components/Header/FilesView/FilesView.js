@@ -32,7 +32,7 @@ const FilesView = () => {
                 </div>
             </div>
             {files.map(({id, item}) => {
-                return <FileItem id={id} caption={item.caption} />
+                return <FileItem id={id} caption={item.caption} timestamp={item.timestamp} fileUrl={item.fileUrl} size={item.size} />
             })}
         </div>
     )
