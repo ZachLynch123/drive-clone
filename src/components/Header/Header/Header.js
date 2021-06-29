@@ -25,7 +25,7 @@ const Header = (props) => {
                     <SettingsIcon />
                 </span>
                 <AppsIcon />
-                <img src="" alt="User's Photo"/>
+                <img src={props.userPhoto} alt="s"/>
                 <p>{`Welcome ${props.userName}`}</p>
             </div>
         </div>
