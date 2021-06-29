@@ -20,7 +20,9 @@ const FilesView = () => {
     return (
         <div className="fileView">
             <div className="fileView-row">
-                {/* cards */}
+                {files.slice(0,5).map((id, item) => {
+                    return <p>{item.caption}</p>
+                })}
             </div>
             <div className="fileView-tiles">
                 <div className="fileView-tiles-left">
