@@ -17,7 +17,6 @@ const FilesView = () => {
         })
     }, [])
 
-    console.log(files)
 
     return (
         <div className='fileView'>

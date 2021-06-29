@@ -1,11 +1,8 @@
   
 import React from 'react'
 
-import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
-
 const FileCard = ({ name, fileUrl }) => {
 
-    console.log(fileUrl);
     return (
         <div className='fileCard'>
             <div className="fileCard--top">

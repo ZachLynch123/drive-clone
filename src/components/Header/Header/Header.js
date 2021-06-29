@@ -5,7 +5,7 @@ import SettingsIcon from '@material-ui/icons/Settings'
 import HelpOutlineIcon from '@material-ui/icons/HelpOutlineOutlined'
 import AppsIcon from '@material-ui/icons/Apps';
 
-const Header = () => {
+const Header = (props) => {
     return (
         <div className="header">
             <div className="logo">
@@ -26,6 +26,7 @@ const Header = () => {
                 </span>
                 <AppsIcon />
                 <img src="" alt="User's Photo"/>
+                <p>{`Welcome ${props.userName}`}</p>
             </div>
         </div>
     )

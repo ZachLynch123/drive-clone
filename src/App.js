@@ -8,12 +8,14 @@ import { auth, provider } from './firebase';
 function App() {
   // auth
   const [user, setUser] = useState();
+  auth.onAuthStateChanged(setUser)
 
   const handleLogin = () => {
     if (!user) {
       auth.signInWithPopup(provider)
       .then(result => {
         setUser(result.user);
+        console.log(result);
       })
     }
   }
@@ -22,7 +24,8 @@ function App() {
     {
       user ? (
         <>
-          <Header userPhoto={user.photoURL} />
+        {console.log(user.displayName)}
+          <Header userPhoto={user.photoURL} userName={user.displayName}/>
           <div className="app__main">
             <Sidebar />
             <FilesView />
