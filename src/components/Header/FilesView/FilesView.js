@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
+
 import FileItem from './FileItem'
+import FileCard from './FileCard'
+
 import { db } from '../../../firebase'
 
 const FilesView = () => {
-    // use hooks
-
     const [files, setFiles] = useState([])
-
 
     useEffect(() => {
         db.collection('myFiles').onSnapshot(snapshot => {
@@ -16,26 +16,33 @@ const FilesView = () => {
             })))
         })
     }, [])
- 
+
+    console.log(files)
+
     return (
-        <div className="fileView">
-            <div className="fileView-row">
-                {files.slice(0,5).map((id, item) => {
-                    return <p>{item.caption}</p>
-                })}
+        <div className='fileView'>
+            <div className="fileView__row">
+                {
+                    files.slice(0, 5).map(({ id, item }) => (
+                        <FileCard name={item.caption} fileUrl={item.fileUrl} />
+                    ))
+
+                }
             </div>
-            <div className="fileView-tiles">
-                <div className="fileView-tiles-left">
-                    <p>name</p>
+            <div className="fileView__titles">
+                <div className="fileView__titles--left">
+                    <p>Name</p>
                 </div>
-                <div className="fileView-tiles-right">
+                <div className="fileView__titles--right">
                     <p>Last modified</p>
-                    <p>File size</p> 
+                    <p>File size</p>
                 </div>
             </div>
-            {files.map(({id, item}) => {
-                return <FileItem id={id} caption={item.caption} timestamp={item.timestamp} fileUrl={item.fileUrl} size={item.size} />
-            })}
+            {
+                files.map(({ id, item }) => (
+                    <FileItem id={id} caption={item.caption} timestamp={item.timestamp} fileUrl={item.fileUrl} size={item.size} />
+                ))
+            }
         </div>
     )
 }

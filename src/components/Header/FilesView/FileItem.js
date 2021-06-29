@@ -9,7 +9,7 @@ const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep
 
 // gets file item by id with correct time stamp and month
 const FileItem = ({ id, caption, timestamp, fileUrl, size }) => {
-    console.log(this.props);
+    console.log(id, caption, fileUrl);
     const fileDate = `${timestamp?.toDate().getDate()} ${monthNames[timestamp?.toDate().getMonth() + 1]} ${timestamp?.toDate().getFullYear()}`
 
     const getReadableFileSizeString = (fileSizeInBytes) => {

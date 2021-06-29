@@ -81,7 +81,6 @@ const NewFile = () => {
         <div className="newFile">
             <div className="newFile_container" onClick={handleOpen}>
                 <AddIcon />
-                <p>New File</p>
             </div>
             <Modal
                 open={open}
