@@ -4,7 +4,6 @@ import SearchIcon from '@material-ui/icons/Search';
 import SettingsIcon from '@material-ui/icons/Settings'
 import HelpOutlineIcon from '@material-ui/icons/HelpOutlineOutlined'
 import AppsIcon from '@material-ui/icons/Apps';
-import { ArchiveRounded } from '@material-ui/icons';
 
 const Header = (props) => {
     return (
