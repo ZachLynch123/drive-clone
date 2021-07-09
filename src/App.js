@@ -7,6 +7,7 @@ import { auth, provider } from './firebase';
 
 function App() {
   // auth
+  // remembers user on refresh
   const [user, setUser] = useState();
   auth.onAuthStateChanged(setUser)
 
